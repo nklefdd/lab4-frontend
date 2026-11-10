@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="Jewelry Store. Каталог прикрас: каблучки, сережки, браслети та підвіски.">
+  <title>Вхід — Jewelry Store</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="../assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="../styles/style.css">
+</head>
+<body class="account-page">
+  <a class="skip-link" href="#main">До вмісту</a>
+  <header class="site-header">
+    <a class="wordmark" href="../index.html" aria-label="Jewelry Store — головна">Jewelry<span>Store.</span></a>
+    <nav class="main-nav" aria-label="Головна навігація">
+      <a href="../index.html#catalog">Каталог <span aria-hidden="true">↗</span></a>
+      <a href="../index.html#approach" class="about-link">Про добірку</a>
+    </nav>
+    <nav class="account-nav" aria-label="Акаунт">
+      <span id="user-name"></span>
+      <a href="profile.html" class="profile-link">Кабінет</a>
+      <a id="register-link" href="register.html" hidden>Реєстрація</a>
+      <a id="login-link" class="nav-action" href="login.html" hidden>Увійти <span aria-hidden="true">↗</span></a>
+      <button id="logout-button" type="button" class="nav-action" hidden>Вийти <span aria-hidden="true">↗</span></button>
+    </nav>
+  </header>
+  <p id="nav-status" role="status"></p>
+  <main id="main" class="account-main">
+    <aside class="account-editorial"><h1>Твій<br>простір.</h1><div class="editorial-bottom"><p>Маленькі деталі.<br>Особистий характер.</p><span aria-hidden="true">↗</span></div></aside>
+    <section class="auth-panel" id="auth-content" aria-label="Вхід" hidden><h2>Раді бачити.</h2><p class="form-intro">Увійди, щоб відкрити свій профіль.</p>
+        <form id="login-form">
+          <label>Логін<input name="username" required maxlength="150" autocomplete="username" placeholder="Твій логін"></label>
+          <label>Пароль<input name="password" type="password" required maxlength="128" autocomplete="current-password" placeholder="Введи пароль"></label>
+          <div id="form-errors" role="alert"></div>
+          <button class="button button-dark" type="submit">Увійти <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="form-switch">Вперше тут? <a id="signup-link" href="register.html">Створити акаунт ↗</a></p></section>
+  </main>
+  <footer class="site-footer">
+    <a class="footer-logo" href="../index.html">Jewelry Store.</a>
+    <div><span>Маленькі деталі.</span><span>Твій характер.</span></div>
+    <nav aria-label="Посилання у підвалі"><a href="../index.html#catalog">Каталог ↗</a><a href="profile.html">Мій профіль ↗</a></nav>
+    <p>© 2026 Jewelry Store</p>
+  </footer>
+  <script src="../app/auth.js"></script>
+  <script src="../app/login.js"></script>
+</body>
+</html>
