@@ -69,7 +69,7 @@ function getNextPage() {
   if (next === "profile.html") {
     return "profile.html";
   }
-  return "index.html";
+  return "../index.html";
 }
 
 function showFormErrors(data) {
@@ -100,5 +100,5 @@ function showConnectionError(elementId) {
 
 document.getElementById("logout-button").addEventListener("click", function () {
   clearTokens();
-  location.replace("index.html");
+  location.replace(document.querySelector(".wordmark").href);
 });

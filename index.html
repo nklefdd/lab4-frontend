@@ -8,7 +8,7 @@
   <title>Твоя форма сяяти — Jewelry Store</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
   <a class="skip-link" href="#main">До вмісту</a>
@@ -20,9 +20,9 @@
     </nav>
     <nav class="account-nav" aria-label="Акаунт">
       <span id="user-name"></span>
-      <a href="profile.html" class="profile-link">Кабінет</a>
-      <a id="register-link" href="register.html" hidden>Реєстрація</a>
-      <a id="login-link" class="nav-action" href="login.html" hidden>Увійти <span aria-hidden="true">↗</span></a>
+      <a href="pages/profile.html" class="profile-link">Кабінет</a>
+      <a id="register-link" href="pages/register.html" hidden>Реєстрація</a>
+      <a id="login-link" class="nav-action" href="pages/login.html" hidden>Увійти <span aria-hidden="true">↗</span></a>
       <button id="logout-button" type="button" class="nav-action" hidden>Вийти <span aria-hidden="true">↗</span></button>
     </nav>
   </header>
@@ -59,7 +59,7 @@
   <footer class="site-footer">
     <a class="footer-logo" href="index.html">Jewelry Store.</a>
     <div><span>Маленькі деталі.</span><span>Твій характер.</span></div>
-    <nav aria-label="Посилання у підвалі"><a href="index.html#catalog">Каталог ↗</a><a href="profile.html">Мій профіль ↗</a></nav>
+    <nav aria-label="Посилання у підвалі"><a href="index.html#catalog">Каталог ↗</a><a href="pages/profile.html">Мій профіль ↗</a></nav>
     <p>© 2026 Jewelry Store</p>
   </footer>
   <dialog id="product-dialog" aria-labelledby="product-dialog-title">
@@ -70,7 +70,7 @@
     <dl class="product-specs"><div><dt>Матеріал</dt><dd id="product-dialog-metal"></dd></div><div><dt>Наявність</dt><dd id="product-dialog-stock"></dd></div></dl>
     <p id="product-dialog-price" class="dialog-price"></p>
   </dialog>
-  <script src="auth.js"></script>
-  <script src="app.js"></script>
+  <script src="app/auth.js"></script>
+  <script src="app/app.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ async function openLogin() {
   try {
     const user = await getCurrentUser();
     if (user) {
-      location.replace("index.html");
+      location.replace("../index.html");
       return;
     }
     showMenu(null);
