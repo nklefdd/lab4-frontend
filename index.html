@@ -3,24 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Jewelry Store — каталог прикрас</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#f5f4ee">
+  <meta name="description" content="Jewelry Store. Каталог прикрас: каблучки, сережки, браслети та підвіски.">
+  <title>Твоя форма сяяти — Jewelry Store</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/manrope.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="header">
-    <h1 class="brand">Jewelry Store</h1>
-    <p class="tagline">Каблучки, сережки, браслети та підвіски</p>
+  <a class="skip-link" href="#main">До вмісту</a>
+  <header class="site-header">
+    <a class="wordmark" href="index.html" aria-label="Jewelry Store — головна">Jewelry<span>Store.</span></a>
+    <nav class="main-nav" aria-label="Головна навігація">
+      <a href="index.html#catalog">Каталог <span aria-hidden="true">↗</span></a>
+      <a href="index.html#approach" class="about-link">Про добірку</a>
+    </nav>
+    <nav class="account-nav" aria-label="Акаунт">
+      <span id="user-name"></span>
+      <a href="profile.html" class="profile-link">Кабінет</a>
+      <a id="register-link" href="register.html" hidden>Реєстрація</a>
+      <a id="login-link" class="nav-action" href="login.html" hidden>Увійти <span aria-hidden="true">↗</span></a>
+      <button id="logout-button" type="button" class="nav-action" hidden>Вийти <span aria-hidden="true">↗</span></button>
+    </nav>
   </header>
-
-  <main class="page">
-    <nav id="filters" class="filters" aria-label="Категорії"></nav>
-    <p id="status" class="status" role="status"></p>
-    <section id="products" class="grid" aria-live="polite"></section>
+  <p id="nav-status" role="status"></p>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        
+        <h1 id="hero-title">Твоя<br>форма<br><span class="last-line">сяяти.<span class="hero-arrow" aria-hidden="true">↗</span></span></h1>
+        <div class="hero-bottom"><p>Не чекай особливого приводу.<br>Обирай те, що відчувається твоїм.</p><a class="button button-dark" href="#catalog">Знайти своє <span aria-hidden="true">↘</span></a></div>
+      </div>
+      <figure class="hero-image">
+        <img src="assets/hero-jewelry.png" alt="Арткомпозиція зі скульптурним сріблястим браслетом і золотистою каблучкою" width="1122" height="1402" fetchpriority="high">
+        
+        <figcaption><span>Сила — у деталях.</span><span>Арткомпозиція</span></figcaption>
+      </figure>
+    </section>
+    <div class="material-strip" aria-label="Каблучки, сережки, браслети та підвіски"><span>КАБЛУЧКИ</span><i aria-hidden="true">/</i><span>СЕРЕЖКИ</span><i aria-hidden="true">/</i><span>БРАСЛЕТИ</span><i aria-hidden="true">/</i><span>ПІДВІСКИ</span><i aria-hidden="true">↘</i></div>
+    <section class="catalog section-space" id="catalog" aria-labelledby="catalog-title">
+      <div class="section-heading"><div><h2 id="catalog-title">Щось твоє.</h2></div></div>
+      <div class="catalog-tools">
+        <nav id="filters" class="filters" aria-label="Категорії прикрас"></nav>
+        <label class="search-field"><span class="sr-only">Знайти прикрасу</span><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Знайти прикрасу" maxlength="150"></label>
+      </div>
+      <div class="catalog-meta"><p>ВИБРАНО <span id="catalog-count">00 / 00</span></p><label>Сортувати <select id="sort-select"><option value="default">За порядком</option><option value="price-asc">Від дешевших</option><option value="price-desc">Від дорожчих</option><option value="name">За назвою</option></select></label></div>
+      <p id="status" class="status" role="status" aria-live="polite">Завантажуємо прикраси…</p>
+      <div id="products" class="product-list"></div>
+    </section>
+    <section class="manifesto section-space" id="approach" aria-labelledby="approach-title">
+      
+      <div class="manifesto-content"><h2 id="approach-title">Не більше.<br><span>Саме твоє.</span></h2><div class="manifesto-note"><span class="large-arrow" aria-hidden="true">↗</span><p>Тихий акцент або смілива форма.<br>Срібло або золото.<br>Правильний вибір — той, що твій.</p><a href="#catalog" class="text-link">До прикрас <span aria-hidden="true">↗</span></a></div></div>
+    </section>
   </main>
-
+  <footer class="site-footer">
+    <a class="footer-logo" href="index.html">Jewelry Store.</a>
+    <div><span>Маленькі деталі.</span><span>Твій характер.</span></div>
+    <nav aria-label="Посилання у підвалі"><a href="index.html#catalog">Каталог ↗</a><a href="profile.html">Мій профіль ↗</a></nav>
+    <p>© 2026 Jewelry Store</p>
+  </footer>
+  <dialog id="product-dialog" aria-labelledby="product-dialog-title">
+    <form method="dialog"><button class="dialog-close" aria-label="Закрити деталі">×</button></form>
+    <p class="card-category" id="product-dialog-category"></p>
+    <h2 id="product-dialog-title"></h2>
+    <p id="product-dialog-description"></p>
+    <dl class="product-specs"><div><dt>Матеріал</dt><dd id="product-dialog-metal"></dd></div><div><dt>Наявність</dt><dd id="product-dialog-stock"></dd></div></dl>
+    <p id="product-dialog-price" class="dialog-price"></p>
+  </dialog>
+  <script src="auth.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
